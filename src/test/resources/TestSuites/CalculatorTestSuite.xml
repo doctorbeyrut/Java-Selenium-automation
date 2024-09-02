@@ -1,0 +1,34 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Calculations" verbose="1" thread-count="4">
+
+    <test name="CalculatorButtonsTest-chrome">
+        <parameter name="browser" value="chrome"></parameter>
+        <classes>
+            <class name="webcalc.CalculatorButtonsTest">
+            </class>
+        </classes>
+    </test>
+    <test name="CalculatorButtonsTest-firefox">
+        <parameter name="browser" value="firefox"></parameter>
+        <classes>
+            <class name="webcalc.CalculatorButtonsTest">
+            </class>
+        </classes>
+    </test>
+    <test name="CalculatorTypingTest-chrome">
+        <parameter name="browser" value="chrome"></parameter>
+        <classes>
+            <class name="webcalc.CalculatorTypingTest">
+            </class>
+        </classes>
+    </test>
+    <test name="CalculatorTypingTest-firefox">
+        <parameter name="browser" value="firefox"></parameter>
+        <classes>
+            <class name="webcalc.CalculatorTypingTest">
+            </class>
+        </classes>
+    </test>
+
+</suite>

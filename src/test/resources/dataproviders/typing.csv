@@ -1,0 +1,2 @@
+no,firstCalculation,firstExpectedResult,secondCalculation,secondExpectedResult,thirdCalculation,thirdExpectedResult
+1,35*999+(100/4),34990,cos(pi),-1,sqrt(81),9
