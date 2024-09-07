@@ -34,11 +34,11 @@ public class CalculatorTypingTest extends Setup {
 
 //        Calculate 35*999+(100/4)= and assert the correct result 34990.
 
-        calculator.type(firstCalculation, calculator.btnInput);
+        calculator.type(firstCalculation, calculator.inputField);
         calculator.calculate();
         log.info("First calculation result:"+ " " + firstExpectedResult);
 
-        wait.until(ExpectedConditions.not(ExpectedConditions.attributeToBe(calculator.btnInput, "value", firstCalculation)));
+        wait.until(ExpectedConditions.not(ExpectedConditions.attributeToBe(calculator.inputField, "value", firstCalculation)));
         String firstActualResult = calculator.getInput().getAttribute("value");
 
         Assert.assertEquals(firstActualResult, firstExpectedResult, "Incorrect result");
@@ -48,11 +48,11 @@ public class CalculatorTypingTest extends Setup {
 //        Calculate cos(pi) with the rad radio button and assert the correct result -1.
 
         calculator.pressRad();
-        calculator.type(secondCalculation, calculator.btnInput);
+        calculator.type(secondCalculation, calculator.inputField);
         calculator.calculate();
         log.info("Second calculation result: " + secondExpectedResult);
 
-        wait.until(ExpectedConditions.not(ExpectedConditions.attributeToBe(calculator.btnInput, "value", secondCalculation)));
+        wait.until(ExpectedConditions.not(ExpectedConditions.attributeToBe(calculator.inputField, "value", secondCalculation)));
         String secondActualResult = calculator.getInput().getAttribute("value");
 
         Assert.assertEquals(secondActualResult, secondExpectedResult, "Incorrect result");
@@ -62,11 +62,11 @@ public class CalculatorTypingTest extends Setup {
 //        Calculate sqrt(81) and assert the correct result 9.
 
         calculator.pressRad();
-        calculator.type(thirdCalculation, calculator.btnInput);
+        calculator.type(thirdCalculation, calculator.inputField);
         calculator.calculate();
         log.info("Third calculation result: " + thirdExpectedResult);
 
-        wait.until(ExpectedConditions.not(ExpectedConditions.attributeToBe(calculator.btnInput, "value", thirdCalculation)));
+        wait.until(ExpectedConditions.not(ExpectedConditions.attributeToBe(calculator.inputField, "value", thirdCalculation)));
         String thirdActualResult = calculator.getInput().getAttribute("value");
 
         Assert.assertEquals(thirdActualResult, thirdExpectedResult, "Incorrect result");

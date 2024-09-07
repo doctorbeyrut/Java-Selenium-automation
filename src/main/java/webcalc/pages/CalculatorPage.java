@@ -13,7 +13,7 @@ public class CalculatorPage {
 
     protected WebDriver driver;
     protected Logger log;
-    private String url = "https://web2.0calc.com/";
+    private final String url = "https://web2.0calc.com/";
     private final By btn0 = By.id("Btn0");
     private final By btn1 = By.id("Btn1");
     private final By btn3 = By.id("Btn3");
@@ -32,7 +32,7 @@ public class CalculatorPage {
     private final By btnPi = By.id("BtnPi");
     private final By btnRad = By.id("trigorad");
     private final By btnSqrt = By.id("BtnSqrt");
-    public final By btnInput = By.id("input");
+    public final By inputField = By.id("input");
     private final By consentButton = By.className("fc-cta-do-not-consent");
 
     public CalculatorPage(WebDriver driver, Logger log) {
@@ -59,7 +59,7 @@ public class CalculatorPage {
         locate(locator).sendKeys(text);
     }
     public WebElement getInput() {
-        return driver.findElement(btnInput);
+        return driver.findElement(inputField);
     }
     public void calculate() {
         press(btnCalc);

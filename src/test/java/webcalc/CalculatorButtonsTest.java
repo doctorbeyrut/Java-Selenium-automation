@@ -35,7 +35,7 @@ public class CalculatorButtonsTest extends Setup {
 
         calculator.calculateFirst();
 
-        wait.until(ExpectedConditions.not(ExpectedConditions.attributeToBe(calculator.btnInput, "value", "35*999+(100/4)")));
+        wait.until(ExpectedConditions.not(ExpectedConditions.attributeToBe(calculator.inputField, "value", "35*999+(100/4)")));
         String firstActualResult = calculator.getInput().getAttribute("value");
 
         Assert.assertEquals(firstActualResult, firstExpectedResult, "Incorrect result");
@@ -51,7 +51,7 @@ public class CalculatorButtonsTest extends Setup {
 
         calculator.calculateSecond();
 
-        wait.until(ExpectedConditions.not(ExpectedConditions.attributeToBe(calculator.btnInput, "value", "cos(pi)")));
+        wait.until(ExpectedConditions.not(ExpectedConditions.attributeToBe(calculator.inputField, "value", "cos(pi)")));
         String secondActualResult = calculator.getInput().getAttribute("value");
 
         Assert.assertEquals(secondActualResult, secondExpectedResult, "Incorrect result");
@@ -60,14 +60,14 @@ public class CalculatorButtonsTest extends Setup {
 
 //        Calculate sqrt(81) and assert the correct result 9.
 
-        double sqrt = sqrt(81); //wyniki kalkulacji wyrzucić do pliku jako dane testowe do podstawienia
+        double sqrt = sqrt(81);
         int squareRoot = (int)sqrt;
         String thirdExpectedResult = Integer.toString(squareRoot);
         log.info("Third calculation result: " + thirdExpectedResult);
 
         calculator.calculateThird();
 
-        wait.until(ExpectedConditions.not(ExpectedConditions.attributeToBe(calculator.btnInput, "value", "sqrt(81)")));
+        wait.until(ExpectedConditions.not(ExpectedConditions.attributeToBe(calculator.inputField, "value", "sqrt(81)")));
         String thirdActualResult = calculator.getInput().getAttribute("value");
 
         Assert.assertEquals(thirdActualResult, thirdExpectedResult, "Incorrect result");
